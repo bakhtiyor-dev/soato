@@ -11,19 +11,38 @@
 </head>
 <body class="bg-light">
 <div class="container">
-    <div class="col-lg-6 mx-auto py-5">
+    <div class="col-lg-8 mx-auto py-5">
         <div class="card shadow">
             <div class="card-header">
-
+                <h4 class="float-start">Студенты</h4>
+                <a href="{{route('students.create')}}" class="btn btn-primary float-end">Добавить</a>
             </div>
             <div class="card-body">
-                <form action="{{route('')}}">
-                    @csrf
-                    <div class="mb-3">
-                        <label class="mb-2">ФИО студента</label>
-                        <input type="text" class="form-control" name="fullname" required>
-                    </div>
-                </form>
+                <div class="table-respinsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Год рождения</th>
+                            <th>Место жительства</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @forelse($students as $student)
+                            <tr>
+                                <td>{{$student->fullname}}</td>
+                                <td>{{$student->birthdate}}</td>
+                                <td>{{$student->address}}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3" class="text-center">Пусто</td>
+                            </tr>
+
+                        @endforelse
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

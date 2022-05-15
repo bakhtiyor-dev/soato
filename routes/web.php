@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/students');
 
-Route::resource('students', \App\Http\Controllers\StudentController::class);
+Route::resource('students', \App\Http\Controllers\StudentController::class)->only(['index', 'create', 'store']);
 
 Route::get('/api/regions/{code}/districts', function ($code) {
     return \App\Models\Region::query()->where('code', $code)->first()->districts->toJson();

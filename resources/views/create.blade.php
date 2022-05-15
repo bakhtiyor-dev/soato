@@ -37,7 +37,7 @@
                             <label class="mb-2">Район:</label>
                             <v-select :options="districts"
                                       label="name"
-                                        @input="onDistrictSelect">
+                                      @input="onDistrictSelect">
                             </v-select>
                         </div>
 
@@ -51,6 +51,9 @@
 
                             <input type="hidden" name="town_id" :value="townCode">
                         </div>
+
+                        <a href="{{route('students.index')}}" class="btn btn-secondary float-start">Отмена</a>
+                        <button type="submit" class="btn btn-primary float-end">Добавить</button>
                     </form>
                 </div>
             </div>
