@@ -1,6 +1,7 @@
 ### Инструкции по установке приложения:
-
-> Необходимо установка Docker(https://docs.docker.com/get-docker/) и Docker Compose(https://docs.docker.com/compose/) на вашем устройстве.
+```
+Необходимо установка Docker(https://docs.docker.com/get-docker/) и Docker Compose(https://docs.docker.com/compose/) на вашем устройстве.
+```
 ---
 
 ```
